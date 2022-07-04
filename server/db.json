@@ -26,6 +26,33 @@
         "doj": "2022-07-11"
       },
       "id": "IC83"
+    },
+    {
+      "formValues": {
+        "department": "SDG"
+      },
+      "desValue": {
+        "designation": "Senior Manager"
+      },
+      "stateValue": {
+        "States": "Goa"
+      },
+      "districtValue": {
+        "districts": "South Goa"
+      },
+      "name": {
+        "name": "sdcscv"
+      },
+      "dob": {
+        "dob": "2022-06-06"
+      },
+      "organisation": {
+        "organisation": "asdvae"
+      },
+      "doj": {
+        "doj": "2022-07-14"
+      },
+      "id": "IC28"
     }
   ]
 }

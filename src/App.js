@@ -6,9 +6,8 @@ import Records from "./components/Records";
 import Edit from "./components/Edit";
 
 function App() {
-  const [formValues, setFormValues] = useState({});
-  const [desValue, setdesValue] = useState({});
-
+  const [department, setDepartment] = useState({});
+  const [designation, setDesignation] = useState({});
   const [stateValue, setStateValue] = useState({});
   const [districtValue, setDistValue] = useState({});
 
@@ -22,8 +21,8 @@ function App() {
   const [clearStates, setClearStates] = useState(false);
 
   const [finalData, setFinalData] = useState({
-    formValues: [],
-    desValue: [],
+    department: [],
+    designation: [],
     stateValue: [],
     districtValue: [],
     name:[],
@@ -54,8 +53,8 @@ function App() {
   useEffect(() => {
     setFinalData({
       ...finalData,
-      formValues,
-      desValue,
+      department,
+      designation,
       stateValue,
       districtValue,
       name,
@@ -63,42 +62,42 @@ function App() {
       organisation,
       doj
     });
-  }, [formValues, desValue, stateValue, districtValue,name,dob,organisation,doj]);
+  }, [department, designation, stateValue, districtValue,name,dob,organisation,doj]);
 
-  const handleSelected = (selected) => {
+  const handleDepartment = (selected) => {
     // console.log(selected);
-    setFormValues({ department: selected });
+    setDepartment({ department: selected });
   };
-  const handleSelected1 = (selected) => {
+  const handleDesignation = (selected) => {
     // console.log(selected);
-    setdesValue({ designation: selected });
+    setDesignation({ designation: selected });
   };
 
-  const handleSelected2 = (selectedState) => {
+  const handleState = (selectedState) => {
     // console.log(selectedState);
     setStateValue({ States: selectedState });
   };
-  const handleSelected3 = (districtValue) => {
+  const handleDistrict = (districtValue) => {
     // console.log(districtValue);
     setDistValue({ districts: districtValue });
   };
 
   const handleName =(n)=>{
-    console.log(n);
+    // console.log(n);
     setName({name:n})
   }
   const handleDob =(Dob)=>{
-    console.log(Dob);
+    // console.log(Dob);
     setDob({dob:Dob})
   }
 
   const handleOrga =(org)=>{
-    console.log(org);
+    // console.log(org);
     setOrganisation({organisation:org})
   }
 
   const handleDoj =(doj)=>{
-    console.log(doj);
+    // console.log(doj);
     setDoj({doj:doj})
   }
 
@@ -126,7 +125,7 @@ function App() {
     });
 
     // console.log(finalData);
-    if (!finalData.formValues) return;
+    if (!finalData.department) return;
 
     let postDb = await axios.post("http://localhost:5000/data", {
       ...finalData,
@@ -179,15 +178,16 @@ function App() {
     <form>
       
       <Form
-        onSelect={handleSelected}
-        onSelect1={handleSelected1}
-        onSelect2={handleSelected2}
-        onSelect3={handleSelected3}
+        onSelect={handleDepartment}
+        onSelect1={handleDesignation}
+        onSelect2={handleState}
+        onSelect3={handleDistrict}
         onName={handleName}
         onDOB={handleDob}
         onOrgani={handleOrga}
         onDOJ={handleDoj}
         postToDB={postToDB}
+        
       />
       <Edit
         editData={editData}

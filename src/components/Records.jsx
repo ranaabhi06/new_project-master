@@ -50,38 +50,41 @@ function Records(props) {
                 </label>
                 <b>{info.id}</b>
                 <br />
-                <label htmlFor="">Name: </label>
+                <label htmlFor=""><em><b>Name:  &nbsp;</b></em></label>
                 {info.name.name}
                 <br />
-                <label htmlFor="">Organization: </label>
-                {info.dob.dob}
-                <br />
-                <label htmlFor="">DOB: </label>
+                <label htmlFor=""><em><b>Organization:  &nbsp; </b></em></label>
                 {info.organisation.organisation}
                 <br />
-                <label htmlFor="">DOJ: </label>
+                <label htmlFor=""><em><b>DOB:</b></em></label>&nbsp;
+                {info.dob.dob}
+                <br />
+                <label htmlFor=""><em><b>DOJ:   &nbsp;</b></em></label>
                 {info.doj.doj}
                 <br />
-                <label htmlFor="">Gender: </label>
+                <label htmlFor=""><em><b>Gender:  &nbsp; </b></em></label>
                 
                 <br />
-                <label htmlFor="">Fav_Editor: </label>
+                <label htmlFor=""><em><b>Are You Ex-Employee: &nbsp; </b></em></label>
+                
+                <br />
+                <label htmlFor=""><em><b>Fav_Editor:  &nbsp;</b></em> </label>
               
                 <br />
-                <label htmlFor="">Fav_Language: </label>
+                <label htmlFor=""><em><b>Fav_Language:  &nbsp;</b></em> </label>
                
                 <br />
 
-                <label htmlFor="">Deparment: </label>
+                <label htmlFor=""><em><b>Deparment:  &nbsp;</b></em> </label>
                 {info.formValues.department}
                 <br />
-                <label htmlFor="">Designation: </label>
+                <label htmlFor=""><em><b>Designation:  &nbsp;</b></em> </label>
                 {info.desValue.designation}
                 <br />
-                <label htmlFor="">State: </label>
+                <label htmlFor=""><em><b>State:   &nbsp;</b></em></label>
                 {info.stateValue.States}
                 <br />
-                <label htmlFor="">District: </label>
+                <label htmlFor=""><em><b>District:   &nbsp;</b></em></label>
                 {info.districtValue.districts}
                 <br></br>
                 <input
@@ -98,7 +101,9 @@ function Records(props) {
                     background: "green",
                   }}
                   value="Edit"
-                />
+                /><br></br>
+                <br></br>
+                
               </form>
             );
           })}

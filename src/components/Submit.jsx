@@ -21,6 +21,7 @@ const Submit = (props) => (
 
         // props.getDb();
         props.postDB(event);
+        window.location.reload();
       }}
     />
   </form>
