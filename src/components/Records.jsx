@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 
-// import Db from '../../server/db.json';
+
 
 function Records(props) {
   const { dbData } = props;
-  // console.log(dbData);
+  console.log(dbData);
+// let name = props.onName();
+// console.log(name);
 
+// let dob = props.onDOB();
+// console.log(dob);
   // const [idsToDelete, setIdsToDelete] = useState([]);
   // console.log(idsToDelete);
 
@@ -46,6 +50,28 @@ function Records(props) {
                 </label>
                 <b>{info.id}</b>
                 <br />
+                <label htmlFor="">Name: </label>
+                {info.name.name}
+                <br />
+                <label htmlFor="">Organization: </label>
+                {info.dob.dob}
+                <br />
+                <label htmlFor="">DOB: </label>
+                {info.organisation.organisation}
+                <br />
+                <label htmlFor="">DOJ: </label>
+                {info.doj.doj}
+                <br />
+                <label htmlFor="">Gender: </label>
+                
+                <br />
+                <label htmlFor="">Fav_Editor: </label>
+              
+                <br />
+                <label htmlFor="">Fav_Language: </label>
+               
+                <br />
+
                 <label htmlFor="">Deparment: </label>
                 {info.formValues.department}
                 <br />

@@ -12,6 +12,11 @@ function App() {
   const [stateValue, setStateValue] = useState({});
   const [districtValue, setDistValue] = useState({});
 
+  const [name ,setName] = useState("");
+  const [dob,setDob] = useState([]);
+  const [organisation,setOrganisation]=useState([]);
+  const [doj,setDoj] = useState([]);
+
   const [dbData, setDbData] = useState([]);
 
   const [clearStates, setClearStates] = useState(false);
@@ -21,6 +26,10 @@ function App() {
     desValue: [],
     stateValue: [],
     districtValue: [],
+    name:[],
+    dob:[],
+    organisation:[],
+    doj:[]
   });
 
   // create new state for receiving data from GET request
@@ -49,8 +58,12 @@ function App() {
       desValue,
       stateValue,
       districtValue,
+      name,
+      dob,
+      organisation,
+      doj
     });
-  }, [formValues, desValue, stateValue, districtValue]);
+  }, [formValues, desValue, stateValue, districtValue,name,dob,organisation,doj]);
 
   const handleSelected = (selected) => {
     // console.log(selected);
@@ -69,6 +82,27 @@ function App() {
     // console.log(districtValue);
     setDistValue({ districts: districtValue });
   };
+
+  const handleName =(n)=>{
+    console.log(n);
+    setName({name:n})
+  }
+  const handleDob =(Dob)=>{
+    console.log(Dob);
+    setDob({dob:Dob})
+  }
+
+  const handleOrga =(org)=>{
+    console.log(org);
+    setOrganisation({organisation:org})
+  }
+
+  const handleDoj =(doj)=>{
+    console.log(doj);
+    setDoj({doj:doj})
+  }
+
+
 
   const getData = () => {
     axios.get("http://localhost:5000/data").then((res) => {
@@ -149,13 +183,18 @@ function App() {
         onSelect1={handleSelected1}
         onSelect2={handleSelected2}
         onSelect3={handleSelected3}
+        onName={handleName}
+        onDOB={handleDob}
+        onOrgani={handleOrga}
+        onDOJ={handleDoj}
+        postToDB={postToDB}
       />
       <Edit
         editData={editData}
 
         // postDB={postToDB}
       />
-      {/* <Submit
+      <Submit
         clearForm={clearForm}
         // onFormSubmit1={handleFormSubmit1}
         // onFormSubmit2={handleFormSubmit2}
@@ -164,13 +203,17 @@ function App() {
         // getDb={getToDB}
         postDB={postToDB}
         // onClick={() => {}}
-      /> */}
+      />
 
       <Records
         dbData={dbData}
         parentTochild={tupac}
         onSetIdsToDelete={handleSetIdsToDelete}
         onEdit={editData}
+        onName={handleName}
+        onDOB={handleDob}
+        onOrgani={handleOrga}
+        onDOJ={handleDoj}
       />
       <input
         type="button"

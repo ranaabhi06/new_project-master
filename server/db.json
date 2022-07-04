@@ -2,48 +2,30 @@
   "data": [
     {
       "formValues": {
-        "department": "PDG"
-      },
-      "desValue": {
-        "designation": "Team Lead"
-      },
-      "stateValue": {
-        "States": "Assam"
-      },
-      "districtValue": {
-        "districts": "Biswanath"
-      },
-      "id": "IC44"
-    },
-    {
-      "formValues": {
-        "department": "PDG"
-      },
-      "desValue": {
-        "designation": "Intern"
-      },
-      "stateValue": {
-        "States": "Dadra and Nagar Haveli (UT)"
-      },
-      "districtValue": {
-        "districts": "Dadra & Nagar Haveli"
-      },
-      "id": "IC77"
-    },
-    {
-      "formValues": {
         "department": "SDG"
       },
       "desValue": {
-        "designation": "Engineer"
+        "designation": "Assistant Manager"
       },
       "stateValue": {
-        "States": "Arunachal Pradesh"
+        "States": "Delhi (NCT)"
       },
       "districtValue": {
-        "districts": "West Kameng"
+        "districts": "North East Delhi"
       },
-      "id": "IC34"
+      "name": {
+        "name": "aswini"
+      },
+      "dob": {
+        "dob": "2022-07-12"
+      },
+      "organisation": {
+        "organisation": "CRMnext"
+      },
+      "doj": {
+        "doj": "2022-07-11"
+      },
+      "id": "IC83"
     }
   ]
 }

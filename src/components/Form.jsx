@@ -3,7 +3,7 @@ import State from "./State.json";
 import Department from "./Department.json";
 import Designation from "./Designation.json";
 import "./form.css";
-import './Submit'
+import "./Submit";
 import Submit from "./Submit";
 
 let Dropdown = (props) => {
@@ -42,34 +42,41 @@ let Dropdown = (props) => {
 
   //DateOfBirth
 
+  //   const DateOfBirth = (props) => {
+  //     // validation --> minimum 100 years back could be selected and maximum D.O.B. could be today
+  //     const minday= "1922-01-01";
+  //     let today = new Date();
 
+  //     let aaj = `${("0"+today.getFullYear()).slice(-4)}-${("0" + (today.getMonth() + 1)).slice(-2)}-${("0" + today.getDate()).slice(-2)}`;
 
-  
-//   const DateOfBirth = (props) => {
-//     // validation --> minimum 100 years back could be selected and maximum D.O.B. could be today
-//     const minday= "1922-01-01";
-//     let today = new Date();
-    
-//     let aaj = `${("0"+today.getFullYear()).slice(-4)}-${("0" + (today.getMonth() + 1)).slice(-2)}-${("0" + today.getDate()).slice(-2)}`;
-    
-//     const [dob, setDob] = useState("");
-//     const onInputChange = e => {
-//         setDob(e.target.value);
-//     };
-// props.saveDob(dob);
+  //     const [dob, setDob] = useState("");
+  //     const onInputChange = e => {
+  //         setDob(e.target.value);
+  //     };
+  // props.saveDob(dob);
 
   return (
     <>
       <form>
         <div className="formCss">
-          <h1 style={{paddingLeft:"5rem",color:"red"}}>Registration Form</h1>
+          <h1 style={{ paddingLeft: "5rem", color: "red" }}>
+            Registration Form
+          </h1>
           <table>
             <tr>
               <td>
                 <label htmlFor="">Name</label>
               </td>
               <td>
-                <input type="text" name="" id="" />
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  required={true}
+                  onChange={(event) => {
+                    console.log(props.onName(event.target.value));
+                  }}
+                />
               </td>
             </tr>
             <tr>
@@ -77,16 +84,32 @@ let Dropdown = (props) => {
                 <label htmlFor="">Organization</label>
               </td>
               <td>
-                <input type="text" name="" id="" />
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  required={true}
+                  onChange={(event) => {
+                    console.log(props.onOrgani(event.target.value));
+                  }}
+                />
               </td>
             </tr>
-            
+
             <tr>
               <td>
                 <label htmlFor="">Date of Birth</label>
               </td>
               <td>
-                <input type="date" name="" id="" />
+                <input
+                  type="date"
+                  name=""
+                  id=""
+                  required={true}
+                  onChange={(event) => {
+                    console.log(props.onDOB(event.target.value));
+                  }}
+                />
               </td>
             </tr>
             <tr>
@@ -94,7 +117,15 @@ let Dropdown = (props) => {
                 <label htmlFor="">Date of Joining</label>
               </td>
               <td>
-                <input type="date" name="" id="" />
+                <input
+                  type="date"
+                  name=""
+                  id=""
+                  required={true}
+                  onChange={(event) => {
+                    console.log(props.onDOJ(event.target.value));
+                  }}
+                />
               </td>
             </tr>
             <tr>
@@ -264,12 +295,15 @@ let Dropdown = (props) => {
                   </Fragment>
                 </select>
               </td>
-            </tr><br />
-            <tr>
-              <td>
-                <Submit />
-              </td>
             </tr>
+            <br />
+            {/* <tr>
+              <td>
+                <Submit
+                
+                />
+              </td>
+            </tr> */}
           </table>
         </div>
       </form>
